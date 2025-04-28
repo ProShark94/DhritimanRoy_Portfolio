@@ -11287,6 +11287,36 @@ body {
       padding: 10px 20px;
   }
 
+  /* --- Masthead Video Background --- */
+
+.masthead-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* ensures video covers entire area */
+  z-index: -1; /* sends video behind text */
+}
+
+.masthead-content, .text-center {
+  position: relative;
+  z-index: 1; /* brings text and buttons above the video */
+}
+
+/* Optional: Dark overlay for better text contrast */
+.masthead::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+
+
   /* Make skills section and projects responsive */
   .skills-container, .ml-container, .software-container {
       display: block;
@@ -11370,43 +11400,4 @@ img {
 }
 
 
-.masthead {
-  position: relative; /* NEW: makes child elements absolute relative to this */
-  height: 100vh;
-  overflow: hidden;
-}
 
-.masthead-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* ensures video covers entire area */
-  z-index: -1; /* sends video behind text */
-}
-
-.masthead-content, .text-center {
-  position: relative;
-  z-index: 1; /* brings text and buttons above the video */
-}
-
-/* Optional: Dark overlay for better text contrast */
-.masthead::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 0;
-}
-
-/* --- Responsive Design for Video Background --- */
-@media (max-width: 768px) {
-  .masthead-video {
-    object-fit: cover;
-    height: 100vh; /* Full height for mobile */
-  }
-}
