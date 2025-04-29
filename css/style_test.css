@@ -11144,7 +11144,10 @@ body {
   position: relative;
   background: url('assets/img/Conference_Roy.JPG') no-repeat center center;
   background-size: cover;
-  background-attachment: fixed;
+  background-position: center;
+  /* No background-attachment: fixed anymore */
+  padding-top: 10rem;
+  padding-bottom: 10rem;
 }
 
 .about-section::before {
@@ -11461,6 +11464,16 @@ body {
   60% {
       transform: translateY(5px);
   }
+}
+
+
+.masthead {
+  height: 100vh;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .masthead {
