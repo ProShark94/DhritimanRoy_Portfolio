@@ -11563,4 +11563,11 @@ img {
     margin: 0.25rem;
 }
 
+#about {
+  background-color: rgba(0, 0, 0, 0.7); /* semi-transparent black background */
+  color: #ffffff; /* white text */
+  padding: 2rem; /* extra padding to make text readable */
+}
+
+
 
