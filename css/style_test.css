@@ -11431,9 +11431,10 @@ body {
 
 
 .masthead {
-  position: relative; /* NEW: makes child elements absolute relative to this */
+  position: relative;
   height: 100vh;
   overflow: hidden;
+  background: url('assets/img/Conference_Roy.JPG') no-repeat center center/cover; /* Fallback image */
 }
 
 .masthead-video {
