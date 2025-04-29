@@ -8269,7 +8269,7 @@ textarea.form-control-lg {
 
 .text-white-50 {
   --bs-text-opacity: 1;
-  color: rgba(255, 255, 255, 1.0) !important;
+  color: white!important;
 }
 
 
@@ -11063,14 +11063,15 @@ body {
   }
   #mainNav.navbar-shrink .nav-link {
     color: #64a19d;
-    padding: 1.5rem 1.5rem 1.25rem;
-    border-bottom: 0.25rem solid transparent;
+    
   }
   #mainNav.navbar-shrink .nav-link:hover {
     color: #64a19d;
   }
   #mainNav.navbar-shrink .nav-link:active {
     color: #64a19d;
+    padding: 1.5rem 1.5rem 1.25rem;
+    border-bottom: 0.25rem solid transparent;
   }
   #mainNav.navbar-shrink .nav-link.active {
     color: #64a19d;
