@@ -11026,10 +11026,10 @@ body {
   outline: none;
   background-color: transparent;
 }
-#mainNav .navbar-nav .nav-item:active, #mainNav .navbar-nav .nav-item:focus {
+/* #mainNav .navbar-nav .nav-item:active, #mainNav .navbar-nav .nav-item:focus {
   outline: none;
   background-color: transparent;
-}
+} */
 @media (min-width: 992px) {
   #mainNav {
     padding-top: 0;
@@ -11075,8 +11075,6 @@ body {
   }
   #mainNav.navbar-shrink .nav-link.active {
     color: #64a19d;
-    outline: none;
-    border-bottom: 0.15rem solid #64a19d;
   }
 }
 
