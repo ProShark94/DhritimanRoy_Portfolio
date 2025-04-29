@@ -11518,6 +11518,34 @@ body {
   }
 }
 
+#about {
+  min-height: 100vh; /* Full viewport height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.7); /* Already your dark overlay */
+  color: white;
+  text-align: center;
+  padding: 2rem;
+}
+
+#skills {
+  min-height: 100vh; /* Full viewport height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #f8f9fa; /* Light background */
+  text-align: center;
+  padding: 2rem;
+}
+
+@media (max-width: 576px) {
+  #about, #skills {
+    padding: 4rem 2rem;
+  }
+}
 
 /* Fix overflows */
 body, html {
