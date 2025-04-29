@@ -4248,13 +4248,6 @@ textarea.form-control-lg {
 }
 
 
-
-.navbar .nav-link.active {
-  font-weight: bold;
-  color: #0d6efd !important; /* Bootstrap primary blue or your brand color */
-  border-bottom: none !important; /* REMOVE underline/slider */
-}
-
 .navbar .nav-link {
   transition: color 0.3s ease, font-weight 0.3s ease;
 }
@@ -11079,7 +11072,6 @@ body {
   }
   #mainNav.navbar-shrink .nav-link {
     color: #000;
-    padding: 1.5rem 1.5rem 1.25rem;
     border-bottom: 0.25rem solid transparent;
   }
   #mainNav.navbar-shrink .nav-link:hover {
@@ -11087,6 +11079,8 @@ body {
   }
   #mainNav.navbar-shrink .nav-link:active {
     color: #467370;
+    outline: none;
+    border-bottom: 0.25rem solid #64a19d;
   }
   #mainNav.navbar-shrink .nav-link.active {
     color: #64a19d;
