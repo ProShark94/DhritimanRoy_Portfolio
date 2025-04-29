@@ -4237,7 +4237,7 @@ textarea.form-control-lg {
 
 .navbar .nav-link.active {
   font-weight: bold;
-  color: #0d6efd !important; /* Bootstrap primary blue or your brand color */
+  color: red!important; /* Bootstrap primary blue or your brand color */
   border-bottom: none !important; /* REMOVE underline/slider */
 }
 
