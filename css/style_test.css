@@ -11199,6 +11199,11 @@ body {
     border-left: 0.5rem solid #64a19d;
   }
 }
+.project-text p.text-black-50{
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+}
 .projects-section .project-text {
   padding: 3rem;
   font-size: 90%;
