@@ -11587,9 +11587,13 @@ img {
 }
 
 .project-text {
-    padding: 1rem;
+    padding: 0.5rem;
 }
 
+.project-text p.text-black-50 {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
 .project-links a {
     margin: 0.25rem;
 }
