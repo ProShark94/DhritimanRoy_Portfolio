@@ -4237,8 +4237,8 @@ textarea.form-control-lg {
 
 .navbar .nav-link.active {
   font-weight: bold;
-  color: red!important; /* Bootstrap primary blue or your brand color */
-  border-bottom: yellow !important; /* REMOVE underline/slider */
+  color: #0d6efd !important; /* Bootstrap primary blue or your brand color */
+  border-bottom: none !important; /* REMOVE underline/slider */
 }
 
 .navbar .nav-link {
@@ -11032,7 +11032,7 @@ body {
 }
 #mainNav .navbar-nav .nav-item:active, #mainNav .navbar-nav .nav-item:focus {
   outline: none;
-  background-color: red;
+  background-color: transparent;
 }
 @media (min-width: 992px) {
   #mainNav {
