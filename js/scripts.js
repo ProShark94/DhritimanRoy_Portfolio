@@ -27,8 +27,16 @@ window.addEventListener('DOMContentLoaded', event => {
         // Initialize ScrollSpy - this will automatically add/remove 'active' class to nav links
         new bootstrap.ScrollSpy(document.body, {
             target: '#mainNav', // The element containing the nav links ScrollSpy should update
-            offset: 80,       // Pixels to offset from top when calculating position. Adjust if needed based on your navbar height.
+            offset: 72, // Adjust based on your navbar height
         });
+    }
+
+    // Ensure "Home" is highlighted on refresh
+    const navLinks = document.querySelectorAll('#mainNav .nav-link');
+    navLinks.forEach(link => link.classList.remove('active')); // Remove active class from all links
+    const homeLink = document.querySelector('#mainNav .nav-link[href="#page-top"]');
+    if (homeLink) {
+        homeLink.classList.add('active'); // Add active class to "Home"
     }
 
     // Collapse responsive navbar when a nav link is clicked (for mobile view)
@@ -46,63 +54,15 @@ window.addEventListener('DOMContentLoaded', event => {
     });
 
     // Optional: Add immediate highlight on click (ScrollSpy should handle this, but this gives instant feedback)
-    const navLinks = document.querySelectorAll('#mainNav .nav-link'); // Target links within #mainNav
     navLinks.forEach(link => {
         // Ensure the link actually points to a section on the page
         if (link.getAttribute('href') && link.getAttribute('href').startsWith('#')) {
-             link.addEventListener('click', function () {
-                 // Remove active class from all nav links within the main nav
-                 navLinks.forEach(l => l.classList.remove('active'));
-                 // Add active class to the clicked link
-                 this.classList.add('active');
-             });
+            link.addEventListener('click', function () {
+                // Remove active class from all nav links within the main nav
+                navLinks.forEach(l => l.classList.remove('active'));
+                // Add active class to the clicked link
+                this.classList.add('active');
+            });
         }
     });
-
-});
-
-const mainNav = document.body.querySelector('#mainNav');
-if (mainNav) {
-    new bootstrap.ScrollSpy(document.body, {
-        target: '#mainNav',
-        offset: 80, // Adjust this value based on your navbar height
-    });
-}
-
-window.addEventListener('DOMContentLoaded', event => {
-    // Navbar shrink function
-    var navbarShrink = function () {
-        const navbarCollapsible = document.body.querySelector('#mainNav');
-        if (!navbarCollapsible) {
-            return;
-        }
-        if (window.scrollY === 0) {
-            navbarCollapsible.classList.remove('navbar-shrink');
-        } else {
-            navbarCollapsible.classList.add('navbar-shrink');
-        }
-    };
-
-    // Shrink the navbar initially on load
-    navbarShrink();
-
-    // Shrink the navbar when the page is scrolled
-    document.addEventListener('scroll', navbarShrink);
-
-    // Activate Bootstrap scrollspy on the main nav element
-    const mainNav = document.body.querySelector('#mainNav');
-    if (mainNav) {
-        new bootstrap.ScrollSpy(document.body, {
-            target: '#mainNav',
-            offset: 72, // Adjust based on your navbar height
-        });
-    }
-
-    // Ensure "Home" is highlighted on refresh
-    const navLinks = document.querySelectorAll('#mainNav .nav-link');
-    navLinks.forEach(link => link.classList.remove('active')); // Remove active class from all links
-    const homeLink = document.querySelector('#mainNav .nav-link[href="#page-top"]');
-    if (homeLink) {
-        homeLink.classList.add('active'); // Add active class to "Home"
-    }
 });
