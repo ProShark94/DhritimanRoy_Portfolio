@@ -32,39 +32,39 @@ window.addEventListener('DOMContentLoaded', event => {
     }
 
     // Ensure "Home" is highlighted on refresh
-    const navLinks = document.querySelectorAll('#mainNav .nav-link');
-    navLinks.forEach(link => link.classList.remove('active')); // Remove active class from all links
-    const homeLink = document.querySelector('#mainNav .nav-link[href="#page-top"]');
-    if (homeLink) {
-        homeLink.classList.add('active'); // Add active class to "Home"
-    }
+const navLinks = document.querySelectorAll('#mainNav .nav-link');
+navLinks.forEach(link => link.classList.remove('active')); // Remove active class from all links
+const homeLink = document.querySelector('#mainNav .nav-link[href="#page-top"]');
+if (homeLink) {
+    homeLink.classList.add('active'); // Add active class to "Home"
+}
 
-    // Collapse responsive navbar when a nav link is clicked (for mobile view)
-    const navbarToggler = document.body.querySelector('.navbar-toggler');
-    const responsiveNavItems = [].slice.call(
-        document.querySelectorAll('#navbarResponsive .nav-link')
-    );
-    responsiveNavItems.map(function (responsiveNavItem) {
-        responsiveNavItem.addEventListener('click', () => {
-            // Check if the toggler button is visible (mobile view)
-            if (window.getComputedStyle(navbarToggler).display !== 'none') {
-                navbarToggler.click(); // Simulate a click on the toggler to close the menu
-            }
-        });
-    });
-
-    // Optional: Add immediate highlight on click (ScrollSpy should handle this, but this gives instant feedback)
-    navLinks.forEach(link => {
-        // Ensure the link actually points to a section on the page
-        if (link.getAttribute('href') && link.getAttribute('href').startsWith('#')) {
-            link.addEventListener('click', function () {
-                // Remove active class from all nav links within the main nav
-                navLinks.forEach(l => l.classList.remove('active'));
-                // Add active class to the clicked link
-                this.classList.add('active');
-            });
+// Collapse responsive navbar when a nav link is clicked (for mobile view)
+const navbarToggler = document.body.querySelector('.navbar-toggler');
+const responsiveNavItems = [].slice.call(
+    document.querySelectorAll('#navbarResponsive .nav-link')
+);
+responsiveNavItems.map(function (responsiveNavItem) {
+    responsiveNavItem.addEventListener('click', () => {
+        // Check if the toggler button is visible (mobile view)
+        if (window.getComputedStyle(navbarToggler).display !== 'none') {
+            navbarToggler.click(); // Simulate a click on the toggler to close the menu
         }
     });
+});
+
+    // Optional: Add immediate highlight on click (ScrollSpy should handle this, but this gives instant feedback)
+navLinks.forEach(link => {
+    // Ensure the link actually points to a section on the page
+    if (link.getAttribute('href') && link.getAttribute('href').startsWith('#')) {
+        link.addEventListener('click', function () {
+            // Remove active class from all nav links within the main nav
+            navLinks.forEach(l => l.classList.remove('active'));
+            // Add active class to the clicked link
+            this.classList.add('active');
+        });
+    }
+});
 });
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -90,4 +90,50 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const navLinks = document.querySelectorAll('#mainNav .nav-link'); // Select all navbar links
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', (event) => {
+            event.preventDefault(); // Prevent default anchor behavior
+
+            const targetId = link.getAttribute('href').substring(1); // Get the target section ID
+            const targetSection = document.getElementById(targetId);
+
+            if (targetSection) {
+                // Scroll to the target section smoothly
+                targetSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const navLinks = document.querySelectorAll('#mainNav .nav-link'); // Select all navbar links
+    const navbarHeight = document.querySelector('#mainNav').offsetHeight; // Get navbar height
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', (event) => {
+            event.preventDefault(); // Prevent default anchor behavior
+
+            const targetId = link.getAttribute('href').substring(1); // Get the target section ID
+            const targetSection = document.getElementById(targetId);
+
+            if (targetSection) {
+                // Calculate the scroll position with offset
+                const targetPosition = targetSection.offsetTop - navbarHeight;
+
+                // Scroll to the target position smoothly
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
 });
