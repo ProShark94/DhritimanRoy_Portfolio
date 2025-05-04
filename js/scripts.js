@@ -66,3 +66,23 @@ window.addEventListener('DOMContentLoaded', event => {
         }
     });
 });
+
+// filepath: /Users/tuhinabanerjee/Desktop/DhritimanRoy_Portfolio-1/js/scripts.js
+
+// Add event listener for the "Roadmap Planning & Execution" skill
+document.addEventListener('DOMContentLoaded', () => {
+    const roadmapSkill = document.getElementById('roadmap-skill');
+    const notificationPopup = document.getElementById('notification-popup');
+
+    if (roadmapSkill && notificationPopup) {
+        roadmapSkill.addEventListener('click', () => {
+            // Show the notification
+            notificationPopup.style.display = 'block';
+
+            // Hide the notification after 3 seconds
+            setTimeout(() => {
+                notificationPopup.style.display = 'none';
+            }, 3000);
+        });
+    }
+});
