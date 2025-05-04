@@ -67,22 +67,27 @@ window.addEventListener('DOMContentLoaded', event => {
     });
 });
 
-// filepath: /Users/tuhinabanerjee/Desktop/DhritimanRoy_Portfolio-1/js/scripts.js
-
-// Add event listener for the "Roadmap Planning & Execution" skill
 document.addEventListener('DOMContentLoaded', () => {
-    const roadmapSkill = document.getElementById('roadmap-skill');
-    const notificationPopup = document.getElementById('notification-popup');
+    const roadmapSkill = document.getElementById('roadmap-skill'); // The skill element
+    const notificationPopup = document.getElementById('notification-popup'); // The popup container
+    const closeNotification = document.getElementById('close-notification'); // The close button
 
-    if (roadmapSkill && notificationPopup) {
+    if (roadmapSkill && notificationPopup && closeNotification) {
+        // Show the popup when the skill is clicked
         roadmapSkill.addEventListener('click', () => {
-            // Show the notification
-            notificationPopup.style.display = 'block';
+            notificationPopup.style.display = 'flex'; // Show the popup
+        });
 
-            // Hide the notification after 3 seconds
-            setTimeout(() => {
-                notificationPopup.style.display = 'none';
-            }, 3000);
+        // Hide the popup when the close button is clicked
+        closeNotification.addEventListener('click', () => {
+            notificationPopup.style.display = 'none'; // Hide the popup
+        });
+
+        // Optional: Hide the popup when clicking outside the content box
+        notificationPopup.addEventListener('click', (event) => {
+            if (event.target === notificationPopup) {
+                notificationPopup.style.display = 'none'; // Hide the popup
+            }
         });
     }
 });
