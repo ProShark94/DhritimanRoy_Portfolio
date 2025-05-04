@@ -97,7 +97,6 @@
   }
 }
 
-
 body {
   margin: 0;
   font-family: var(--bs-body-font-family);
@@ -106,7 +105,7 @@ body {
   line-height: var(--bs-body-line-height);
   color: var(--bs-body-color);
   text-align: var(--bs-body-text-align);
-  background-color: #272727;
+  background-color: var(--bs-body-bg);
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
@@ -11041,7 +11040,6 @@ textarea.form-control-lg {
 }
 html {
   scroll-padding-top: calc(4.5rem - 1px);
-  scroll-behavior: smooth;
 }
 
 body {
@@ -11214,37 +11212,32 @@ body {
 
 
 
-.projects-section, 
-.references-section {
+.projects-section {
   padding: 10rem 0;
   
 }
-.projects-section .featured-text,
-.references-section {
+.projects-section .featured-text {
   padding: 2rem;
 }
 @media (min-width: 992px) {
-  .projects-section .featured-text,
-  .references-section{
+  .projects-section .featured-text {
     padding: 0 0 0 2rem;
     border-left: 0.5rem solid #64a19d;
   }
 }
-.projects-section .project-text,
-.references-section{
+.projects-section .project-text {
   padding: 1rem;
   font-size: 90%;
 }
 @media (min-width: 992px) {
-  .projects-section .project-text,  
-  .references-section{
+  .projects-section .project-text {
     padding: 3rem;
   }
 }
 
 .signup-section {
   padding: 10rem 0;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.5) 75%, #000 100%), url("https://t3.ftcdn.net/jpg/03/91/46/10/360_F_391461057_5P0BOWl4lY442Zoo9rzEeJU0S2c1WDZR.jpg");
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.5) 75%, #000 100%), url("../assets/img/bg-signup.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
@@ -11350,8 +11343,7 @@ body {
 }
 
 /* Default styles for all devices (mobile-first) */
-.projects-section .software-container, 
-.references-section
+.projects-section .software-container,
 .projects-section .ml-container {
     display: flex;
     flex-wrap: wrap;
@@ -11411,8 +11403,7 @@ body {
         margin: 0 auto;
     }
     .projects-section .software-container,
-    .projects-section .ml-container,
-    .references-section {
+    .projects-section .ml-container {
         justify-content: flex-start; /* Align projects to the left */
         gap: 20px; /* Add gap between projects */
     }
@@ -11611,7 +11602,7 @@ img {
     height: auto;
 }
 
-.projects-section, .references-section {
+.projects-section {
     padding: 2rem 0;
 }
 
